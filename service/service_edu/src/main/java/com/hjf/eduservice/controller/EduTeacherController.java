@@ -2,17 +2,17 @@ package com.hjf.eduservice.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.api.R;
+//import com.baomidou.mybatisplus.core.metadata.IPage;
+//import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.hjf.commonutils.ResultCode;
+//import com.hjf.commonutils.ResultCode;
 import com.hjf.commonutils.ReturnType;
 import com.hjf.eduservice.entity.EduTeacher;
 import com.hjf.eduservice.entity.vo.TeacherQuery;
 import com.hjf.eduservice.service.EduTeacherService;
-import com.hjf.servicebase.exceptionhandler.GuliException;
+//import com.hjf.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.*;
-import org.apache.poi.util.StringUtil;
+//import org.apache.poi.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +32,7 @@ import java.util.Map;
 @Api(description = "讲师管理")      // 在类上加注解
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     @Autowired
@@ -133,6 +134,9 @@ public class EduTeacherController {
             wrapper.le("gmt_create", end);
         }
 
+        // 排序
+        wrapper.orderByDesc("gmt_create");
+
 
         // 调用方法实现条件查询分页
         teacherService.page(pageTeacher, wrapper);
@@ -153,6 +157,7 @@ public class EduTeacherController {
             return ReturnType.error();
         }
     }
+
 
     // 根据讲师id进行查询
     @GetMapping("/getTeacher/{id}")

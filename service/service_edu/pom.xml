@@ -11,6 +11,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>service_edu</artifactId>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+
+        <!--
+            easyexcel是在poi的基础上开发的
+            所以还需要引入poi相关的依赖
+            同时, easyexcel 2.1.1版本还需要和poi的3.17版本对应
+
+            由于在父项目中已经引入了poi相关的配置, 这里就不需要引入以下依赖
+        -->
+
+        <!--
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+        -->
+    </dependencies>
 
 
 </project>
