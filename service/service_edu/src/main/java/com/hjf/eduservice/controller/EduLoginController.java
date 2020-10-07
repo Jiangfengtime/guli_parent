@@ -1,7 +1,7 @@
 package com.hjf.eduservice.controller;
 
 import com.hjf.commonutils.ReturnType;
-import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * @create 2020-10-04 13:50
  */
 
-@Api(description = "简易登录" )
+@ApiModel(description = "简易登录" )
 @RestController
 @RequestMapping("/eduservice/user")
 @CrossOrigin  // 添加注解, 解决跨域问题

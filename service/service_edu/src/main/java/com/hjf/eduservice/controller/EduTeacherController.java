@@ -2,24 +2,17 @@ package com.hjf.eduservice.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-//import com.baomidou.mybatisplus.core.metadata.IPage;
-//import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-//import com.hjf.commonutils.ResultCode;
 import com.hjf.commonutils.ReturnType;
 import com.hjf.eduservice.entity.EduTeacher;
 import com.hjf.eduservice.entity.vo.TeacherQuery;
 import com.hjf.eduservice.service.EduTeacherService;
-//import com.hjf.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.*;
-//import org.apache.poi.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
@@ -29,7 +22,7 @@ import java.util.Map;
  * @author Jiang锋时刻
  * @since 2020-09-30
  */
-@Api(description = "讲师管理")      // 在类上加注解
+@ApiModel(description = "讲师管理")      // 在类上加注解
 @RestController
 @RequestMapping("/eduservice/teacher")
 @CrossOrigin
@@ -37,7 +30,6 @@ public class EduTeacherController {
 
     @Autowired
     private EduTeacherService teacherService;
-
 
     // 查询讲师表中的所有数据
     // rest风格
